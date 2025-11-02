@@ -161,6 +161,7 @@
               <h3>Free Book — 10ka xeer ee yareynta cabsida</h3>
               <div class="muted">Waa xeerar kaa yareynaya cabsida fagaare ka hadalka.</div>
               <div style="margin-top:10px">
+                 <p id="downloadCount"></p>
                 <a href="https://drive.google.com/file/d/14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS/view?usp=sharing " download class="btn" style="background:var(--main)">Download Free</a>
               </div>
             </div>
@@ -257,8 +258,21 @@ bookModal.addEventListener('click', (e) => {
   }
 });
 
+    // When someone downloads your book
+fetch('https://api.countapi.xyz/hit/musab-book/downloads')
+  .then(res => res.json())
+  .then(data => console.log("Total downloads:", data.value));
+
+fetch('https://api.countapi.xyz/get/musab-book/downloads')
+  .then(res => res.json())
+  .then(data => document.getElementById('downloadCount').innerText = 
+        `Total downloads: ${data.value}`);
+
+
+
   </script>
 </body>
 </html>
+
 
 
