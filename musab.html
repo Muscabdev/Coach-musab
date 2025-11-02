@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Musab — Public Speaking Coach</title>
+  <meta name="description" content="Musab — Public speaking coach. E-books, training, and resources." />
+  <style>
+    :root{
+      --main:#1a237e; /* primary color */
+      --accent:#f4c542;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:12px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    body{margin:0;background:var(--bg);color:#111; -webkit-font-smoothing:antialiased;}
+    .wrap{max-width:var(--maxw);margin:24px auto;padding:16px;}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,#fff,#fbfdff);box-shadow:0 8px 28px rgba(11,61,145,0.04);position:sticky;top:10px;z-index:50}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:56px;height:56px;border-radius:14px;object-fit:cover;box-shadow:0 8px 20px rgba(11,61,145,0.06)}
+    .brand h1{font-size:18px;margin:0;color:var(--main)}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--main);text-decoration:none;font-weight:600}
+    .hamburger{display:none;border:0;background:transparent;cursor:pointer;padding:8px}
+
+    /* hero (previous layout) */
+    .hero{display:flex;gap:28px;align-items:center;margin-top:20px;flex-wrap:wrap}
+    .hero-left{width:280px;min-width:240px}
+    .hero-left .photo{width:100%;aspect-ratio:1/1;background:#eee;border-radius:18px;overflow:hidden;box-shadow:0 12px 36px rgba(11,61,145,0.06)}
+    .hero-left .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-left .name{margin-top:12px;text-align:center}
+    .hero-left .name h2{font-size:20px;color:var(--main);margin:0}
+    .hero-left .name p{color:var(--muted);margin:6px 0 0}
+
+    .hero-right{flex:1;min-width:260px;background:var(--card);padding:22px;border-radius:14px;box-shadow:0 12px 36px rgba(2,6,23,0.04)}
+    .hero-right h2{margin:0 0 10px;font-size:22px}
+    .hero-right p{color:var(--muted);line-height:1.6}
+    .hero-right .actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--main);color:#fff;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700; }
+    .btn.secondary{background:#fff;color:var(--main);border:1px solid rgba(26,35,126,0.08)}
+      .btn {
+            padding: 7px 15px;
+            text-decoration: none;
+            font-size: 13px;
+            margin-top: 10px;
+          }
+
+    /* sections */
+    section{margin-top:26px}
+    .section-title{font-size:20px;color:var(--main);margin-bottom:14px}
+
+    /* ebooks grid */
+    .ebooks{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.03)}
+    .thumb{width:120px;height:160px;border-radius:10px;object-fit:cover;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+    .ebook-row{display:flex;gap:14px;align-items:center}
+    .ebook-info h3{margin:0 0 6px;color:var(--main)}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* contact */
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .contact-list a{color:var(--main);text-decoration:none;font-weight:600}
+
+    footer{text-align:center;margin-top:28px;color:var(--muted);font-size:13px;padding:18px}
+
+    /* responsive */
+    @media (max-width:880px){
+      nav{display:none;position:absolute;top:72px;right:16px;flex-direction:column;background:#fff;padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+      nav.show{display:flex}
+      .hamburger{display:block}
+      .hero{flex-direction:column;align-items:center}
+      .hero-right{width:100%}
+      .hero-left{width:200px}
+    }
+        @media (max-width:500px){
+          .btn {
+            padding: 7px 15px;
+            text-decoration: none;
+            font-size: 13px;
+          }
+
+        }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="3116491.png" style="border-radius: 50%; border: 2px solid #1a237e; padding: 1px; ">
+        <div><h1> Coach Musab</h1><div style="font-size:13px;color:var(--muted)">Public Speaking Coach | content creator</div></div>
+      </div>
+
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ebooks">E-books</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="2" rx="1" fill="#1a237e"/><rect y="7" width="26" height="2" rx="1" fill="#1a237e"/><rect y="14" width="26" height="2" rx="1" fill="#1a237e"/></svg>
+      </button>
+    </header>
+
+    <!-- Home (previous layout) -->
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <div class="photo" style="border: 3px solid #1a237e; padding: 3px;"><img src="Generated Image September 05, 2025 - 7_19PM.jpeg" alt="Musab" style="object-position: 0 -22px; border-radius: 10px;"></div>
+        <div class="name">
+          <h2>Musab Ibrahim</h2>
+          <p>Public Speaking Coach | content creator</p>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <h2>U hadal si kalsooni leh.(Speak with confident).</h2>
+        <p>I help students and young professionals in Somalia improve public speaking
+        and overcome stage fear using simple, practical techniques. Explore my
+        guides and get started today.</p>
+        <div class="actions">
+          <button class="btn" onclick="document.getElementById('ebooks').scrollIntoView({behavior:'smooth'})">Explore My Books</button>
+          <a href="#contact"><button class="btn secondary" style="border: 1px solid #1a237e;">Book a Session</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-title">About Me</div>
+      <div class="card">
+        <p style="color:var(--muted);line-height:1.7">
+          I’m Musab — I coach students and young professionals to speak clearly, confidently, and persuasively.
+          My programs focus on practical practice, breathing, pacing and structure so you gain real results fast.
+        </p>
+      </div>
+    </section>
+
+    <!-- E-books -->
+    <section id="ebooks">
+      <div class="section-title"> My E-books</div>
+      <div class="ebooks">
+        <!-- Free Book -->
+        <div class="card">
+          <div class="ebook-row">
+            <img class="thumb" src="ChatGPT Image Aug 28, 2025, 12_39_58 PM.png" alt="Free book">
+            <div class="ebook-info">
+              <h3>Free Book — 10ka xeer ee yareynta cabsida</h3>
+              <div class="muted">Waa xeerar kaa yareynaya cabsida fagaare ka hadalka.</div>
+              <div style="margin-top:10px">
+                <a href="https://drive.google.com/uc?export=download&id=14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS" download class="btn" style="background:var(--main)">Download Free</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRP Method (link to prp.html) -->
+        <div class="card">
+          <div class="ebook-row">
+            <img class="thumb" src="Screenshot 2025-10-25 120608.png" alt="PRP method">
+            <div class="ebook-info">
+              <h3>PRP Method — Coming Soon</h3>
+              <div class="muted">Deep, practical guide for confident public speaking. ($Paid)</div>
+              <!-- <div style="margin-top:10px">
+                <a href="prp.html" class="btn" style="background:var(--accent);color:#111">View Details</a> -->
+                 <button id="viewDetailBtn" class="btn" style="background:#e2e211;color:#000000;">View Details</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-title">Contact</div>
+      <div class="card contact-list">
+        <div><strong>WhatsApp:</strong> <a href="https://wa.me/2526YYYYYYY" target="_blank">+252 683887140</a></div>
+        <div><strong>Email:</strong> <a href="mailto:musab@example.com">musab716255@gmail.com</a></div>
+        <div style="margin-top:8px;color:var(--muted)">Tiktok: @caoch-musab</div>
+      </div>
+    </section>
+
+    <footer>© 2025 Musab — All rights reserved</footer>
+  </div>
+
+  <!-- Modal Background -->
+<div id="bookModal" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+">
+  <!-- Modal Content -->
+  <div style="
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      max-width:500px;
+      width:90%;
+      text-align:left;
+      position:relative;
+  ">
+    <h2>PRP Method — Coming Soon</h2>
+    <p>Buuggan waxaa si gaar ah loogu talagalay ardayda dugsiyada sare iyo jaamacadaha, iyo qof kasta oo bilow ah ee ku cusub fagaare ka hadalka. Waxaad ka baran doontaa talaabooyin fudud oo kaa caawinaya inaad si fiican aad usoo jeediso si kalsooni khudbaha fasalka dhexdiis, kuna noqoto qof kalsooni leh</p>
+    <p class="small">Release date: Coming Soon</p>
+
+    <button id="closeModalBtn" class="btn" style="background:#d32f2f;color:#fff;">Close</button>
+  </div>
+</div>
+
+
+  <script>
+    // mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', ()=> nav.classList.toggle('show'));
+
+// for coming soon book
+    const viewDetailBtn = document.getElementById('viewDetailBtn');
+const bookModal = document.getElementById('bookModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+viewDetailBtn.addEventListener('click', () => {
+  bookModal.style.display = "flex"; // show modal
+});
+
+closeModalBtn.addEventListener('click', () => {
+  bookModal.style.display = "none"; // hide modal
+});
+
+// Optional: close modal if clicking outside content
+bookModal.addEventListener('click', (e) => {
+  if(e.target === bookModal){
+    bookModal.style.display = "none";
+  }
+});
+
+  </script>
+</body>
+</html>
