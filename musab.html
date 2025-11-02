@@ -259,20 +259,21 @@ bookModal.addEventListener('click', (e) => {
 });
 
     // When someone downloads your book
-fetch('https://api.countapi.xyz/hit/musab-book/downloads')
-  .then(res => res.json())
-  .then(data => console.log("Total downloads:", data.value));
+// fetch('https://api.countapi.xyz/hit/musab-book/downloads')
+//   .then(res => res.json())
+//   .then(data => console.log("Total downloads:", data.value));
 
-fetch('https://api.countapi.xyz/get/musab-book/downloads')
-  .then(res => res.json())
-  .then(data => document.getElementById('downloadCount').innerText = 
-        `Total downloads: ${data.value}`);
+// fetch('https://api.countapi.xyz/get/musab-book/downloads')
+//   .then(res => res.json())
+//   .then(data => document.getElementById('downloadCount').innerText = 
+//         `Total downloads: ${data.value}`);
 
 
 
   </script>
 </body>
 </html>
+
 
 
 
