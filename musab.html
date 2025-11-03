@@ -162,7 +162,9 @@
               <div class="muted">Waa xeerar kaa yareynaya cabsida fagaare ka hadalka.</div>
               <div style="margin-top:10px">
                  <p id="downloadCount"></p>
-                <a href="https://drive.google.com/file/d/14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS/view?usp=sharing " download class="btn" style="background:var(--main)">Download Free</a>
+                <!-- <a href="https://drive.google.com/file/d/14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS/view?usp=sharing " download class="btn" style="background:var(--main)">Download Free</a> -->
+                  <p id="freeDownloadCount" class="small">Total Downloads: 0</p>
+<button id="freeDownloadBtn" class="btn">⬇️ Download Free Book</button>
               </div>
             </div>
           </div>
@@ -259,20 +261,32 @@ bookModal.addEventListener('click', (e) => {
 });
 
     // When someone downloads your book
-// fetch('https://api.countapi.xyz/hit/musab-book/downloads')
-//   .then(res => res.json())
-//   .then(data => console.log("Total downloads:", data.value));
 
-// fetch('https://api.countapi.xyz/get/musab-book/downloads')
-//   .then(res => res.json())
-//   .then(data => document.getElementById('downloadCount').innerText = 
-//         `Total downloads: ${data.value}`);
+// free book URl
+  const FREE_BOOK_URL = "https://drive.google.com/uc?export=download&id=14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS";
+  const freeBtn = document.getElementById("freeDownloadBtn");
+  const freeCount = document.getElementById("freeDownloadCount");
+
+  // Load saved count from localStorage
+  let count = parseInt(localStorage.getItem("freeBookCount")) || 0;
+  freeCount.textContent = `Total Downloads: ${count}`;
+
+  freeBtn.addEventListener("click", () => {
+    // Increment counter
+    count += 1;
+    localStorage.setItem("freeBookCount", count);
+    freeCount.textContent = `Total Downloads: ${count}`;
+
+    // Open PDF
+    window.open(FREE_BOOK_URL, "_blank");
+  });
 
 
 
   </script>
 </body>
 </html>
+
 
 
 
