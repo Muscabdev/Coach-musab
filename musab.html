@@ -163,7 +163,6 @@
               <div style="margin-top:10px">
                  <p id="downloadCount"></p>
                 <!-- <a href="https://drive.google.com/file/d/14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS/view?usp=sharing " download class="btn" style="background:var(--main)">Download Free</a> -->
-                  <p id="freeDownloadCount" class="small">Total Downloads: 0</p>
 <button id="freeDownloadBtn" class="btn">⬇️ Download Free Book</button>
               </div>
             </div>
@@ -260,32 +259,14 @@ bookModal.addEventListener('click', (e) => {
   }
 });
 
-    // When someone downloads your book
-
-// free book URl
-  const FREE_BOOK_URL = "https://drive.google.com/file/d/14MQvxxIfCOTg3b9EiwR3VagUwX7Xl9MS/view?usp=sharing";
-  const freeBtn = document.getElementById("freeDownloadBtn");
-  const freeCount = document.getElementById("freeDownloadCount");
-
-  // Load saved count from localStorage
-  let count = parseInt(localStorage.getItem("freeBookCount")) || 0;
-  freeCount.textContent = `Total Downloads: ${count}`;
-
-  freeBtn.addEventListener("click", () => {
-    // Increment counter
-    count += 1;
-    localStorage.setItem("freeBookCount", count);
-    freeCount.textContent = `Total Downloads: ${count}`;
-
-    // Open PDF
-    window.open(FREE_BOOK_URL, "_blank");
-  });
+   
 
 
 
   </script>
 </body>
 </html>
+
 
 
 
